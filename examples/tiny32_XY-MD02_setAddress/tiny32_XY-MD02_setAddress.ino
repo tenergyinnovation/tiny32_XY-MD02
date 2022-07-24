@@ -31,7 +31,8 @@ void setup()
 void loop()
 {
 
-  int8_t _response_id;
+  Serial.printf("Info: Old ID: %d\r\n",id);
+  Serial.printf("Info: New ID: %d\r\n",new_id);
   _response_id = mcu.XY_MD02_SetAddress(id,new_id);
 
   /* check status */
@@ -44,6 +45,6 @@ void loop()
     Serial.printf("Error: can't change address\r\n");
   }
 
-  vTaskDelay(5000);
+  while(1);
 
 }
